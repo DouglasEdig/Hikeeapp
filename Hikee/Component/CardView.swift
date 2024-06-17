@@ -11,10 +11,21 @@ struct CardView: View {
     // Layout properties
     var cardWidth: CGFloat = 320
     var cardHeight: CGFloat = 570
+    var title = "Hiking"
+    var subTitle = "Fun and enjoyable outdoor activity for friends and families."
+    var onButtonPressed: () {
+        print("the button was pressed")
+    }
+    var imageName: String = "image-1"
+    var circleGradientColors: [Color] = [
+            Color("ColorIndigoMedium"),
+            Color("ColorSalmonLight")
+    ]
+
+    
     
     // Main View
     var body: some View {
-        
         ZStack {
             CustomBackgroundView()
             cardContent
@@ -30,53 +41,82 @@ struct CardView: View {
 extension CardView {
     var cardContent: some View {
         VStack {
-            VStack(alignment: .leading) {
-                HStack {
-                    Text("Hiking")
-                        .fontWeight(.black)
-                        .font(.system(size: 52))
-                        .foregroundStyle(
-                            LinearGradient(
-                                colors: [
-                                    .customGrayLight,
-                                    .customGrayMedium],
-                                startPoint: .top,
-                                endPoint: .bottom)
-                        )
-                    
-                    Spacer()
-                    
-                    Button {
-                        print("the button was pressed")
-                    }label: {
-                        CustomButtonView()
-                    }
-                    
-                }
-                
-                Text("Fun and enjoyable outdoor activity for friends and families.")
-                    .multilineTextAlignment(/*@START_MENU_TOKEN@*/.leading/*@END_MENU_TOKEN@*/)
-                    .italic()
-                    .foregroundColor(.customGrayMedium)
-            }
-            .padding(.horizontal,30)
-            
+            topComposition
             imageComposition
         }
+    }
+}
+
+// MARK: - Top Composition
+extension CardView {
+    var topComposition: some View {
+        VStack(alignment: .leading) {
+            headerButtonStack
+            subHeader
+        }
+        .padding(.horizontal, 30)
+
+    }
+}
+
+// MARK: - Header And Button Stack
+extension CardView {
+    // Layout Properties
+    var fontSize: CGFloat { 52 }
+    
+    // Views
+    var headerButtonStack: some View {
+        HStack {
+            header
+            button
+        }
+    }
+    
+    var header: some View {
+        Text(title)
+            .fontWeight(.black)
+            .font(.system(size: fontSize))
+            .foregroundStyle(
+                fontGradient
+            )
+            .frame(
+                maxWidth: .infinity,
+                alignment: .leading
+            )
+    }
+    
+    var fontGradient: LinearGradient {
+        LinearGradient(
+            colors: [
+                .customGrayLight,
+                .customGrayMedium],
+            startPoint: .top,
+            endPoint: .bottom
+        )
+    }
+    
+    var button: some View {
+        Button {
+            onButtonPressed
+        }label: {
+            CustomButtonView()
+        }
+    }
+}
+
+extension CardView {
+    var subHeader: some View {
+        Text(subTitle)
+            .multilineTextAlignment(/*@START_MENU_TOKEN@*/.leading/*@END_MENU_TOKEN@*/)
+            .italic()
+            .foregroundColor(.customGrayMedium)
     }
 }
 
 // MARK: - Image Composition
 extension CardView {
     // Layout properties
-    var imageName: String { "image-1" }
     var circleSize: CGFloat { 256 }
-    var backgroundColors: [Color] {
-        [
-            Color("ColorIndigoMedium"),
-            Color("ColorSalmonLight")
-        ]
-    }
     
     // Views
     var imageComposition: some View {
@@ -90,7 +130,7 @@ extension CardView {
         Circle()
             .fill(
                 LinearGradient(
-                    colors: backgroundColors,
+                    colors: circleGradientColors,
                     startPoint: .topLeading,
                     endPoint: .bottomTrailing
                 )
