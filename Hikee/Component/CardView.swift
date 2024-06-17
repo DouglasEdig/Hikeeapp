@@ -21,8 +21,6 @@ struct CardView: View {
             Color("ColorIndigoMedium"),
             Color("ColorSalmonLight")
     ]
-
-    
     
     // Main View
     var body: some View {
