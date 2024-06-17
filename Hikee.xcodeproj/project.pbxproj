@@ -11,6 +11,10 @@
 		914C3B9F2C1F89BA00515886 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 914C3B9E2C1F89BA00515886 /* ContentView.swift */; };
 		914C3BA12C1F89BC00515886 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 914C3BA02C1F89BC00515886 /* Assets.xcassets */; };
 		914C3BA42C1F89BC00515886 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 914C3BA32C1F89BC00515886 /* Preview Assets.xcassets */; };
+		914C3BAB2C1FBF5200515886 /* CardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 914C3BAA2C1FBF5200515886 /* CardView.swift */; };
+		914C3BAE2C1FC1EB00515886 /* CustomBackgroundView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 914C3BAD2C1FC1EB00515886 /* CustomBackgroundView.swift */; };
+		914C3BB12C1FC51600515886 /* ColorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 914C3BB02C1FC51600515886 /* ColorExtension.swift */; };
+		914C3BB32C1FCB7800515886 /* CustomButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 914C3BB22C1FCB7800515886 /* CustomButtonView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -19,6 +23,10 @@
 		914C3B9E2C1F89BA00515886 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		914C3BA02C1F89BC00515886 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		914C3BA32C1F89BC00515886 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		914C3BAA2C1FBF5200515886 /* CardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardView.swift; sourceTree = "<group>"; };
+		914C3BAD2C1FC1EB00515886 /* CustomBackgroundView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomBackgroundView.swift; sourceTree = "<group>"; };
+		914C3BB02C1FC51600515886 /* ColorExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorExtension.swift; sourceTree = "<group>"; };
+		914C3BB22C1FCB7800515886 /* CustomButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomButtonView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -51,10 +59,12 @@
 		914C3B9B2C1F89BA00515886 /* Hikee */ = {
 			isa = PBXGroup;
 			children = (
+				914C3BAC2C1FC1C500515886 /* Component */,
+				914C3BAF2C1FC4A200515886 /* Utility */,
+				914C3BA22C1F89BC00515886 /* Preview Content */,
 				914C3B9C2C1F89BA00515886 /* HikeeApp.swift */,
 				914C3B9E2C1F89BA00515886 /* ContentView.swift */,
 				914C3BA02C1F89BC00515886 /* Assets.xcassets */,
-				914C3BA22C1F89BC00515886 /* Preview Content */,
 			);
 			path = Hikee;
 			sourceTree = "<group>";
@@ -65,6 +75,24 @@
 				914C3BA32C1F89BC00515886 /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		914C3BAC2C1FC1C500515886 /* Component */ = {
+			isa = PBXGroup;
+			children = (
+				914C3BAA2C1FBF5200515886 /* CardView.swift */,
+				914C3BAD2C1FC1EB00515886 /* CustomBackgroundView.swift */,
+				914C3BB22C1FCB7800515886 /* CustomButtonView.swift */,
+			);
+			path = Component;
+			sourceTree = "<group>";
+		};
+		914C3BAF2C1FC4A200515886 /* Utility */ = {
+			isa = PBXGroup;
+			children = (
+				914C3BB02C1FC51600515886 /* ColorExtension.swift */,
+			);
+			path = Utility;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -138,7 +166,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				914C3B9F2C1F89BA00515886 /* ContentView.swift in Sources */,
+				914C3BAB2C1FBF5200515886 /* CardView.swift in Sources */,
 				914C3B9D2C1F89BA00515886 /* HikeeApp.swift in Sources */,
+				914C3BB32C1FCB7800515886 /* CustomButtonView.swift in Sources */,
+				914C3BAE2C1FC1EB00515886 /* CustomBackgroundView.swift in Sources */,
+				914C3BB12C1FC51600515886 /* ColorExtension.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
